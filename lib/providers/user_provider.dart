@@ -1,5 +1,3 @@
-import 'dart:ffi';
-
 import 'package:flutter/material.dart';
 import 'package:insta_clone_flutter/models/user.dart';
 import 'package:insta_clone_flutter/resources/auth_methods.dart';
