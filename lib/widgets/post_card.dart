@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:insta_clone_flutter/providers/user_provider.dart';
 import 'package:insta_clone_flutter/resources/firestore_methods.dart';
+import 'package:insta_clone_flutter/screens/comments_screen.dart';
 import 'package:insta_clone_flutter/widgets/like_animation.dart';
 import 'package:intl/intl.dart';
 import 'package:provider/provider.dart';
@@ -156,7 +157,13 @@ class _PostCardState extends State<PostCard> {
                 ),
               ),
               IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.of(context).push(
+                    MaterialPageRoute(
+                      builder: (context) => CommentScreen(),
+                    ),
+                  );
+                },
                 icon: const Icon(
                   Icons.comment_outlined,
                 ),
