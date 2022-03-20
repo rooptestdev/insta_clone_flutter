@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:insta_clone_flutter/utils/colors.dart';
+import 'package:intl/intl.dart';
 
 class CommentCard extends StatefulWidget {
-  const CommentCard({Key? key}) : super(key: key);
+  final snap;
+  const CommentCard({Key? key, required this.snap}) : super(key: key);
 
   @override
   State<CommentCard> createState() => _CommentCardState();
@@ -16,7 +18,7 @@ class _CommentCardState extends State<CommentCard> {
       child: Row(
         children: [
           CircleAvatar(
-            backgroundImage: NetworkImage(''),
+            backgroundImage: NetworkImage(widget.snap['profilePic']),
             radius: 18.0,
           ),
           Expanded(
@@ -30,12 +32,12 @@ class _CommentCardState extends State<CommentCard> {
                     text: TextSpan(
                       children: [
                         TextSpan(
-                          text: 'username -',
+                          text: '${widget.snap['name']} -',
                           style: const TextStyle(
                               fontWeight: FontWeight.bold, color: primaryColor),
                         ),
                         TextSpan(
-                          text: ' some description to insert',
+                          text: widget.snap['text'],
                           style: const TextStyle(color: primaryColor),
                         ),
                       ],
@@ -44,8 +46,10 @@ class _CommentCardState extends State<CommentCard> {
                   Padding(
                     padding: const EdgeInsets.only(top: 4.0),
                     child: Text(
-                      '23/02/2222',
-                      style: TextStyle(
+                      DateFormat.yMMMd().format(
+                        widget.snap['datePublished'].toDate(),
+                      ),
+                      style: const TextStyle(
                         fontSize: 12,
                         fontWeight: FontWeight.w400,
                       ),
