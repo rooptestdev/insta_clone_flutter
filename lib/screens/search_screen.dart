@@ -1,9 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
-import 'package:insta_clone_flutter/screens/feed_screen.dart';
 import 'package:insta_clone_flutter/screens/profile_screen.dart';
 import 'package:insta_clone_flutter/utils/colors.dart';
+import 'package:insta_clone_flutter/utils/global_variable.dart';
 
 class SearchScreen extends StatefulWidget {
   const SearchScreen({Key? key}) : super(key: key);
@@ -93,10 +93,16 @@ class _SearchScreenState extends State<SearchScreen> {
                     snapshot.data!.docs[index]['postUrl'],
                     fit: BoxFit.cover,
                   ),
-                  staggeredTileBuilder: (index) => StaggeredTile.count(
-                    (index % 7 == 0) ? 2 : 1,
-                    (index % 7 == 0) ? 2 : 1,
-                  ),
+                  staggeredTileBuilder: (index) =>
+                      MediaQuery.of(context).size.width > webScreenSize
+                          ? StaggeredTile.count(
+                              (index % 7 == 0) ? 1 : 1,
+                              (index % 7 == 0) ? 1 : 1,
+                            )
+                          : StaggeredTile.count(
+                              (index % 7 == 0) ? 2 : 1,
+                              (index % 7 == 0) ? 2 : 1,
+                            ),
                   mainAxisSpacing: 8,
                   crossAxisSpacing: 8,
                 );
