@@ -8,7 +8,6 @@ import 'package:insta_clone_flutter/utils/colors.dart';
 import 'package:insta_clone_flutter/utils/global_variable.dart';
 import 'package:insta_clone_flutter/utils/utils.dart';
 import 'package:insta_clone_flutter/widgets/text_field_input.dart';
-
 import 'package:insta_clone_flutter/responsive/responsive_layout.dart';
 
 class LoginScreen extends StatefulWidget {

@@ -1,8 +1,5 @@
 import 'dart:typed_data';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/animation.dart';
-import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:insta_clone_flutter/resources/storage_methods.dart';
 import 'package:insta_clone_flutter/models/user.dart' as model;
@@ -36,7 +33,6 @@ class AuthMethods {
           file != null) {
         UserCredential cred = await _auth.createUserWithEmailAndPassword(
             email: email, password: password);
-        print(cred.user!.uid);
         String photoUrl = await StorageMethods()
             .uploadImageToStorage('profilePics', file, false);
 

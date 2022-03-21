@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:insta_clone_flutter/utils/global_variable.dart';
-
-import '../utils/colors.dart';
+import 'package:insta_clone_flutter/utils/colors.dart';
 
 class WebScreenLayout extends StatefulWidget {
   const WebScreenLayout({Key? key}) : super(key: key);

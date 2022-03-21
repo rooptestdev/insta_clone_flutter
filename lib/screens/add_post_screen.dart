@@ -25,7 +25,7 @@ class _AddPostScreenState extends State<AddPostScreen> {
         context: context,
         builder: (context) {
           return SimpleDialog(
-            title: const Text('Creat a Post'),
+            title: const Text('Create a Post'),
             children: [
               SimpleDialogOption(
                 padding: const EdgeInsets.all(20.0),
@@ -188,9 +188,9 @@ class _AddPostScreenState extends State<AddPostScreen> {
                         ),
                       ),
                     ),
-                    const Divider(),
                   ],
                 ),
+                const Divider(),
               ],
             ),
           );

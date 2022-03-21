@@ -11,6 +11,8 @@ import 'package:insta_clone_flutter/utils/utils.dart';
 import 'package:insta_clone_flutter/widgets/text_field_input.dart';
 import 'package:insta_clone_flutter/resources/auth_methods.dart';
 
+import '../utils/global_variable.dart';
+
 class SignupScreen extends StatefulWidget {
   const SignupScreen({Key? key}) : super(key: key);
 
@@ -79,7 +81,10 @@ class _SignupScreenState extends State<SignupScreen> {
     return Scaffold(
       body: SafeArea(
         child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 32.0),
+          padding: MediaQuery.of(context).size.width > webScreenSize
+              ? EdgeInsets.symmetric(
+                  horizontal: MediaQuery.of(context).size.width / 3)
+              : const EdgeInsets.symmetric(horizontal: 32.0),
           width: double.infinity,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
